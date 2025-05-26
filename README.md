@@ -37,7 +37,6 @@ MAK-8 follows a 3-stage pipeline-like operation:
              +--+-------+---+
                 |       |
        +--------+       +----------+
-       |                           |
 +------+-----+             +-------+------+
 | Register    |            |   Control     |
 | File (R0–R7)|            |     FSM       |
