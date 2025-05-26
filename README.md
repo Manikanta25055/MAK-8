@@ -61,10 +61,7 @@ MAK-8 is written in **SystemVerilog**, simulated using Vivado/ModelSim, and synt
 ---
 
 ## 👨‍💻 Author
-
 Manikanta Gonugondla
-B.Tech EEE – Manipal Institute of Technology
-🔌 Passionate about digital systems, embedded design, and building real hardware from scratch.
 
 
 
