@@ -1,4 +1,4 @@
-# MAK-8: Minimalist Architecture Kernel – 8-bit RISC CPU
+# MAK-8: Manikanta's Architechture Kit – 8-bit RISC CPU
 
 **MAK-8** is a fully custom-designed 8-bit **RISC-style CPU core** built from scratch using **SystemVerilog** and designed to run on the **Digilent Nexys A7 (Artix-7)** FPGA. It is educational, minimal, and modular – perfect for learning how CPUs actually work.
 
