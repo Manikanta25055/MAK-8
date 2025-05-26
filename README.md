@@ -6,7 +6,7 @@
 
 ## 🔧 Features
 
-- 8-bit datapath and instruction width
+- 8-bit datapath and 16 bit instruction width
 - 8 general-purpose registers (R0–R7)
 - Custom RISC-style ISA with:
   - Arithmetic, logic, load/store, branch instructions
