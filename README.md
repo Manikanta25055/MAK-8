@@ -26,63 +26,45 @@ MAK-8 follows a 3-stage pipeline-like operation:
 2. **Decode** – Registers and control signals selected
 3. **Execute** – ALU ops or memory read/write
 
-### 🔲 Block Diagram (Simplified)
-           +-----------------+
-           |  Program ROM    |
-           +--------+--------+
-                    |
-             +------+------+
-             |  Instruction |
-             |    Decoder   |
-             +--+-------+---+
-                |       |
-       +--------+       +----------+
-+------+-----+             +-------+------+
-| Register    |            |   Control     |
-| File (R0–R7)|            |     FSM       |
-+------+-----+             +-------+------+
-       |                           |
-       +-------------+------------+
-                     |
-                 +---+---+
-                 |  ALU  |
-                 +---+---+
-                     |
-               +-----+-----+
-               |   Data RAM |
-               +-----------+
-
----
-
-## 🗂️ File Structure
-
-mak-8/
-├── LICENSE.txt
-├── README.md
-├── rtl/
-│   ├── mak8_top.sv
-│   ├── alu.sv
-│   ├── register_file.sv
-│   ├── pc.sv
-│   ├── control_unit.sv
-│   ├── rom.sv
-│   └── ram.sv
-├── sim/
-│   └── testbench.sv
-├── doc/
-│   └── isa_spec.md
-├── constraints/
-│   └── nexys_a7.xdc
-└── programs/
-└── led_blink.hex
-
----
-
 ## 🔋 Getting Started
 
 ### 🔧 Prerequisites:
 - Xilinx Vivado 2020.2 or later
 - Digilent Nexys A7 FPGA board
 - Basic SystemVerilog and RTL simulation knowledge
+
+---
+
+## ⚙️ Emulation & FPGA Deployment
+
+MAK-8 is written in **SystemVerilog**, simulated using Vivado/ModelSim, and synthesized onto the **Digilent Nexys A7** FPGA board.
+
+### 🧪 Emulation Flow:
+- Write assembly → Convert to machine code (HEX)
+- Load HEX into ROM (Vivado's init file)
+- Simulate in Vivado or ModelSim using `testbench.sv`
+
+### 🔧 FPGA Deployment:
+1. Open **Vivado**
+2. Create a new project
+3. Add all `.sv` files from the `rtl/` folder
+4. Set `mak8_top.sv` as the top module
+5. Import `nexys_a7.xdc` constraint file
+6. Assign pins for:
+   - LEDs (for register/memory output)
+   - Switches/Buttons (for inputs)
+7. Generate Bitstream and Program the FPGA
+8. Output can be verified using onboard LEDs, or over UART (future)
+
+💡 **Clock Input**: Use the onboard 100 MHz clock, divided down in SystemVerilog.
+
+---
+
+## 👨‍💻 Author
+
+Manikanta Gonugondla
+B.Tech EEE – Manipal Institute of Technology
+🔌 Passionate about digital systems, embedded design, and building real hardware from scratch.
+
 
 
