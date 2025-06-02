@@ -1,0 +1,11 @@
+// Counter program that outputs to LOWER LEDs
+1100  // ADDI R1, R0, 0    ; Initialize R1 to 0
+1200  // ADDI R2, R0, 0    ; Initialize R2 to 0
+1301  // ADDI R3, R0, 1    ; Set increment value = 1
+// Loop start (address 3)
+0113  // ADD R1, R1, R3    ; R1 = R1 + 1
+8100  // STB R1, R0, 0xF1  ; Store R1 to LED register (0xF1)
+F000  // NOP               ; Small delay
+F000  // NOP
+91FC  // BNE R0, -4        ; Jump back to loop start
+E000  // HLT               ; Should never reach
